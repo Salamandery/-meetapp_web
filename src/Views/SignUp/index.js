@@ -11,6 +11,7 @@ import {
 const SignUp = () => {
     return (
         <Container>
+            <span>M</span>
             <Input placeholder="Nome completo" />
             <Input placeholder="Digite seu e-mail" />
             <Input placeholder="Sua senha secreta" />

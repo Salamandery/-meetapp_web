@@ -10,6 +10,14 @@ export const Container = styled.div`
     align-items: center;
     flex-direction: column;
 
+    > span {
+        margin-bottom: 30px;
+        align-self: center;
+        color: #99003d;
+        font-size: 68px;
+        font-family: sans-serif;
+    }
+
     a {
         text-decoration: none;
         color: #fff;

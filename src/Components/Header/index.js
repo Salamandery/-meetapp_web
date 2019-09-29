@@ -12,10 +12,10 @@ import {
 const Header = () => {
     return (
         <Container>
-            <div>M</div>
+            <a href="/Dashboard">M</a>
             <User>
                 <UserInfo>
-                    <Username>Meu nome</Username>
+                    <Username>Rodolfo M F Abreu</Username>
                     <ButtonPerfil>Meu Perfil</ButtonPerfil>
                 </UserInfo>
                 <Sair>Sair</Sair>

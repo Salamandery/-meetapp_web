@@ -39,12 +39,31 @@ export const Save = styled.button`
         color: #fff;
     }
 `;
-export const ChangePassword = styled.div`
-    margin-top: 20px;
+export const Image = styled.div`
+    color: #666;
+    background: #000;
+    font-size: 64px;
+    margin-bottom: 20px;
     align-self: stretch;
-    width: 100%;
+    height: 300px;
     display: flex;
-    border-top: 1px solid #333;
     padding-top: 10px;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
+
+    &:hover {
+        font-size: 65px;
+        color: #999;
+        cursor: pointer;
+
+        > span {
+            font-size: 21px;
+        }
+    }
+
+    > span {
+        margin-top: 15px;
+        font-size: 20px;
+    }
 `;

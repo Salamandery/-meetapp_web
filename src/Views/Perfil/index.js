@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { FaRegSave } from 'react-icons/fa';
 import Header from '../../Components/Header';
 import {
     Container,
@@ -22,7 +22,10 @@ const Perfil = () => {
                     <Input placeholder="Nova senha" />
                     <Input placeholder="Confirmação de senha" />
                 </ChangePassword>
-                <Save>Salvar perfil</Save>
+                <Save>
+                    <FaRegSave />
+                    <span>Salvar perfil</span>
+                </Save>
             </Container>
         </>
     );

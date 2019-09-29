@@ -9,25 +9,40 @@ export const Container = styled.div`
     color: #fff;
     padding: 5px 15px;
     background: #000;
+
+    > a {
+        text-decoration: none;
+        align-self: center;
+        color: #99003d;
+        font-size: 42px;
+        font-family: sans-serif;
+    }
 `;
 export const User = styled.div`
     display: flex;
     flex-direction: row;
     padding-bottom: 5px;
+    align-items: center;
 `;
 export const UserInfo = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
     padding: 10px;
 `;
 export const Username = styled.p`
     color: #fff;
-    &:hover {
-        color: #999;
-    }
+    font-weight: bold;
 `;
-export const ButtonPerfil = styled.p`
+export const ButtonPerfil = styled.a.attrs({
+    href: "/Perfil"
+})`
     color: #999;
+    text-decoration: none;
+    
     &:hover {
         color: #666;
+        cursor: pointer;
     }
 `;
 export const Sair = styled.button`

@@ -1,8 +1,8 @@
 ### Telas:
 
-![WebView](assets/Login.PNG)
-
 ![WebView](assets/SignUp.PNG)
+
+![WebView](assets/Login.PNG)
 
 ![WebView](assets/Dashboard.PNG)
 

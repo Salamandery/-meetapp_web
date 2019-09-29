@@ -1,5 +1,4 @@
 ### Telas:
-- Cadastro
 
 ![WebView](assets/SignUp.PNG)
 - Login

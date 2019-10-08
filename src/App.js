@@ -1,14 +1,17 @@
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { Router } from 'react-router-dom';
 
-import Routes from './Services/route';
+import './Config/ReactotronConfig';
+
+import Routes from './Services/Routes/routes';
+import history from './Services/history';
 import './App.css';
 
-function App({history}) {
+function App() {
   return (
-    <BrowserRouter>
+    <Router history={history}>
       <Routes />
-    </BrowserRouter>
+    </Router>
   );
 }
 

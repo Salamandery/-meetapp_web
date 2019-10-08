@@ -1,14 +1,13 @@
 import React from 'react';
 import {
     Switch,
-    Route,
 } from 'react-router-dom';
-
-import SignIn from '../Views/SignIn';
-import SignUp from '../Views/SignUp';
-import Perfil from '../Views/Perfil';
-import Dashboard from '../Views/Dashboard';
-import NewMeetup from '../Views/NewMeetup';
+import Route from './Route';
+import SignIn from '../../Views/SignIn';
+import SignUp from '../../Views/SignUp';
+import Perfil from '../../Views/Perfil';
+import Dashboard from '../../Views/Dashboard';
+import NewMeetup from '../../Views/NewMeetup';
 
 const Routes = () => {
     return (

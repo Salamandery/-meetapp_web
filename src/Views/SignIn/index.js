@@ -1,5 +1,7 @@
-import React from 'react';
-
+import React, {
+    useState
+} from 'react';
+import api from '../../Services/api';
 import {
     Container,
     Login
@@ -8,14 +10,37 @@ import {
     Input
 } from '../../Style';
 
-const SignIn = () => {
+const SignIn = ({history}) => {
+    const [email, setEmail] = useState(''); 
+    const [password, setPass] = useState(''); 
+
+    async function handlerSignIn() {
+        try {
+            const res = await api.post('/sessions', {
+                email,
+                password
+            });
+            if (res.status === 200) {
+                history.push('/Dashboard');
+            }
+        } catch (err) {
+            console.log(err)
+        }
+
+    }
 
     return (
         <Container> 
             <span>M</span>
-            <Input placeholder="Login" />
-            <Input placeholder="Senha" />
-            <Login>Entrar</Login>
+            <Input placeholder="Login" 
+                   value={email} 
+                   onChange={e=>setEmail(e.target.value)}
+            />
+            <Input placeholder="Senha"
+                   value={password} 
+                   onChange={e=>setPass(e.target.value)}
+             />
+            <Login onClick={handlerSignIn}>Entrar</Login>
             <a href="/SignUp">Criar conta grátis</a>
         </Container>
     );

@@ -22,19 +22,25 @@ const Details = () => {
         history.push('/Dashboard');
     }
 
+    function handlerEdit(e) {
+        e.preventDefault();
+
+        history.push('/Meetup', {meetup});
+    }
+
     return (   
         <Container>
             <SubHeader>
                 <span>{meetup.name}</span>
                 <ButtonGroup>
-                <EditMeet>
-                    <FaEdit />
-                    <span>Editar</span>
-                </EditMeet>
-                <CanMeet>
-                    <FaTrashAlt />
-                    <span>Cancelar</span>
-                </CanMeet>
+                    <EditMeet onClick={handlerEdit}>
+                        <FaEdit />
+                        <span>Editar</span>
+                    </EditMeet>
+                    <CanMeet>
+                        <FaTrashAlt />
+                        <span>Cancelar</span>
+                    </CanMeet>
                 </ButtonGroup>
             </SubHeader>
             <GroupMeetup>

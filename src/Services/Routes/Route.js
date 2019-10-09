@@ -5,15 +5,14 @@ import { Route, Redirect } from 'react-router-dom';
 import Portal from '../../Views/_layouts/Portal';
 import Default from '../../Views/_layouts/Default';
 
-import store from '../store';
+import { store } from '../store';
 
 function Router({
     component: Component,
     isPrivate = false,
     ...rest
 }) {
-    //const { signed } = store.getState().auth;
-    const signed = true;
+    const { signed } = store.getState().auth;
     
     if (!signed && isPrivate) {
         return <Redirect to="/" />;

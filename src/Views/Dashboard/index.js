@@ -21,11 +21,7 @@ const Dashboard = () => {
     useEffect(()=>{
         async function loadMeetup() {
             try {
-                const res = await api.get('/events', {
-                    headers: {
-                        authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTcwNTU3NjMzLCJleHAiOjE1NzExNjI0MzN9.9SoF-qfPUkJdkkCMbiqxYYXO0-YSBXdum3a4wgV3x90"
-                    }
-                });
+                const res = await api.get('/events');
                 if (res) {
                     setMeetup(res.data);
                 }

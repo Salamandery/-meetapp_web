@@ -24,11 +24,7 @@ const Perfil = () => {
     useEffect(()=>{
         async function loadUserInfo() {
             try {
-                const user = await api.get('/users', {
-                    headers: {
-                        authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTcwNDg2NzQ5LCJleHAiOjE1NzEwOTE1NDl9.GTtZq47s3LuXy0Lz0hPurxlFLJF0pzm2wq9JIEINOrA"
-                    }
-                });
+                const user = await api.get('/users');
                 if (user) {
                     setEmail(user.data.email);
                     setName(user.data.name);
@@ -51,10 +47,6 @@ const Perfil = () => {
                 oldPassword,
                 password,
                 confirmPassword
-            },{
-                headers: {
-                    authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTcwNDg2NzQ5LCJleHAiOjE1NzEwOTE1NDl9.GTtZq47s3LuXy0Lz0hPurxlFLJF0pzm2wq9JIEINOrA"
-                }
             });
         } catch (err) {
             console.tron.log(err);

@@ -1,7 +1,7 @@
 import React, {
     useState
 } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import {
     Container,
     Login
@@ -12,6 +12,7 @@ import {
 import { signInRequest } from '../../Services/store/auth/action';
 const SignIn = () => {
     const dispatch = useDispatch();
+    const loading = useSelector(state => state.auth.loading);
     const [email, setEmail] = useState(''); 
     const [password, setPass] = useState(''); 
 
@@ -35,7 +36,7 @@ const SignIn = () => {
                    value={password} 
                    onChange={e=>setPass(e.target.value)}
              />
-            <Login onClick={handlerSignIn}>Entrar</Login>
+            <Login onClick={handlerSignIn}>{ loading ? 'Carregando..' : 'Entrar' }</Login>
             <a href="/SignUp">Criar conta grátis</a>
         </Container>
     );

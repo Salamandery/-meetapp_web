@@ -1,7 +1,7 @@
 import React, {
     useState
 } from 'react';
-import api from '../../Services/api';
+import { useDispatch } from 'react-redux';
 import {
     Container,
     Login
@@ -9,20 +9,15 @@ import {
 import {
     Input
 } from '../../Style';
-
-const SignIn = ({history}) => {
+import { signInRequest } from '../../Services/store/auth/action';
+const SignIn = () => {
+    const dispatch = useDispatch();
     const [email, setEmail] = useState(''); 
     const [password, setPass] = useState(''); 
 
     async function handlerSignIn() {
         try {
-            const res = await api.post('/sessions', {
-                email,
-                password
-            });
-            if (res.status === 200) {
-                history.push('/Dashboard');
-            }
+            dispatch(signInRequest(email, password));
         } catch (err) {
             console.log(err)
         }

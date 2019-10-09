@@ -4,7 +4,7 @@ import React, {
 } from 'react';
 import api from '../../Services/api';
 import { FaAngleRight, FaRegCalendarPlus } from 'react-icons/fa';
-import Header from '../../Components/Header';
+
 import {
     Container,
     GroupMeetup,
@@ -37,31 +37,28 @@ const Dashboard = () => {
     }, []);
 
     return (   
-        <>
-            <Header />
-            <Container>
-                <SubHeader>
-                    <span>Meus meetups</span>
-                    <NewMeet>
-                        <FaRegCalendarPlus />
-                        <span>Novo meetup</span>
-                    </NewMeet>
-                </SubHeader>
-                <GroupMeetup>
-                    { meetup ? (
-                        meetup.map(meet=>(
-                        <Meetup key={meet.id}>
-                            <Title>{meet.description}</Title>
+        <Container>
+            <SubHeader>
+                <span>Meus meetups</span>
+                <NewMeet>
+                    <FaRegCalendarPlus />
+                    <span>Novo meetup</span>
+                </NewMeet>
+            </SubHeader>
+            <GroupMeetup>
+                { meetup ? (
+                    meetup.map(meet=>(
+                    <Meetup key={meet.id}>
+                        <Title>{meet.name}</Title>
 
-                            <DataLabel>    
-                                <span>{meet.date}</span>
-                                <FaAngleRight />
-                            </DataLabel>
-                        </Meetup>))
-                    ) : null }
-                </GroupMeetup>
-            </Container>
-        </>
+                        <DataLabel>    
+                            <span>{meet.date}</span>
+                            <FaAngleRight />
+                        </DataLabel>
+                    </Meetup>))
+                ) : null }
+            </GroupMeetup>
+        </Container>
     );
 }
 

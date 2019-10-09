@@ -1,3 +1,16 @@
+## MEETAPP WEB
+### Funcionalidades
+- Cadastro de usuários e eventos
+- Saga
+- Redux
+- Redux persistente
+- Upload de imagem (cadastro de evento)
+- Styled-components
+- Autenticação
+- Layout padrão para não logado e logado
+- Reactotron
+- Toastify
+
 ### Telas:
 - Cadastro
 ![WebView](assets/SignUp.PNG)

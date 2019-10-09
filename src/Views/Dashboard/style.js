@@ -4,7 +4,7 @@ export const Container = styled.div`
     color: #fff;
     margin: 50px auto;
     display: flex;
-    width: 728px;
+    width: 900px;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -23,9 +23,7 @@ export const SubHeader = styled.div`
         margin-bottom: 10px;
     }
 `;
-export const NewMeet = styled.a.attrs({
-    href: "/NewMeetup"
-})`
+export const NewMeet = styled.button`
     text-decoration: none;
     display: flex;
     align-items: flex-start;
@@ -64,6 +62,11 @@ export const Meetup = styled.button`
     background: #000;
     color: #fff;
     justify-content: space-between;
+
+    &:hover div span {
+        color: #999;
+        cursor: pointer;
+    }
 `;
 export const DataLabel = styled.div`
     display: flex;
@@ -73,10 +76,6 @@ export const DataLabel = styled.div`
         font-size: 14px;
         color: #666;
         margin-right: 15px; 
-        &:hover {
-            color: #999;
-            cursor: pointer;
-        }
     }
 `;
 export const GroupMeetup = styled.div`

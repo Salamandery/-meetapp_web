@@ -2,7 +2,6 @@ import React, {
     useState,
     useEffect
 } from 'react';
-import * as Yup from 'yup';
 import api from '../../Services/api';
 import { FaRegSave } from 'react-icons/fa';
 
@@ -14,11 +13,6 @@ import {
 import {
     Input
 } from '../../Style';
-
-const schema = Yup.object().shape({
-    email: Yup.string().email('Insira um e-mail válido').required('Necessário inserir um e-mail.'),
-    password: Yup.string().min(6).required('Senha obrigatória.')
-});
 
 const Perfil = () => {
     const [email, setEmail] = useState('');

@@ -12,8 +12,9 @@ function Router({
     isPrivate = false,
     ...rest
 }) {
-    const { signed } = store.getState().auth;
-
+    //const { signed } = store.getState().auth;
+    const signed = true;
+    
     if (!signed && isPrivate) {
         return <Redirect to="/" />;
     } 

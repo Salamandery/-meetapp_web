@@ -9,14 +9,6 @@ export const Container = styled.div`
     color: #fff;
     padding: 5px 15px;
     background: #000;
-
-    > a {
-        text-decoration: none;
-        align-self: center;
-        color: #99003d;
-        font-size: 42px;
-        font-family: sans-serif;
-    }
 `;
 export const User = styled.div`
     display: flex;
@@ -34,16 +26,25 @@ export const Username = styled.p`
     color: #fff;
     font-weight: bold;
 `;
-export const ButtonPerfil = styled.a.attrs({
-    href: "/Perfil"
-})`
+export const ButtonPerfil = styled.button`
     color: #999;
     text-decoration: none;
+    background: transparent;
+    border: 0;
     
     &:hover {
         color: #666;
         cursor: pointer;
     }
+`;
+export const Logo = styled.button`
+    background: transparent;
+    border: 0;
+    text-decoration: none;
+    align-self: center;
+    color: #99003d;
+    font-size: 42px;
+    font-family: sans-serif;
 `;
 export const Sair = styled.button`
     background: #99003d;

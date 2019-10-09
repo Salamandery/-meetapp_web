@@ -4,7 +4,7 @@ import React, {
 } from 'react';
 import api from '../../Services/api';
 import { FaAngleRight, FaRegCalendarPlus } from 'react-icons/fa';
-
+import history from '../../Services//history';
 import {
     Container,
     GroupMeetup,
@@ -36,11 +36,22 @@ const Dashboard = () => {
         loadMeetup();
     }, []);
 
+    function handlerNewEvent(e) {
+        e.preventDefault();
+
+        history.push('/Meetup');
+    }
+    function handleDetails(e, item) {
+        e.preventDefault();
+
+        history.push('/Details', {item});
+    }
+
     return (   
         <Container>
             <SubHeader>
                 <span>Meus meetups</span>
-                <NewMeet>
+                <NewMeet onClick={handlerNewEvent}>
                     <FaRegCalendarPlus />
                     <span>Novo meetup</span>
                 </NewMeet>
@@ -48,7 +59,7 @@ const Dashboard = () => {
             <GroupMeetup>
                 { meetup ? (
                     meetup.map(meet=>(
-                    <Meetup key={meet.id}>
+                    <Meetup key={meet.id} onClick={e=>handleDetails(e,meet)}>
                         <Title>{meet.name}</Title>
 
                         <DataLabel>    

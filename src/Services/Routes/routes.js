@@ -8,6 +8,7 @@ import SignUp from '../../Views/SignUp';
 import Perfil from '../../Views/Perfil';
 import Dashboard from '../../Views/Dashboard';
 import NewMeetup from '../../Views/NewMeetup';
+import Details from '../../Views/Details';
 
 const Routes = () => {
     return (
@@ -16,7 +17,8 @@ const Routes = () => {
             <Route path="/SignUp" component={SignUp} />
             <Route path="/Perfil" component={Perfil} isPrivate />
             <Route path="/Dashboard" component={Dashboard} isPrivate />
-            <Route path="/NewMeetup" component={NewMeetup} isPrivate />
+            <Route path="/Meetup" component={NewMeetup} isPrivate />
+            <Route path="/Details" component={Details} isPrivate />
         </Switch>
     );
 }

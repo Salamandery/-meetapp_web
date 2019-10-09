@@ -1,7 +1,7 @@
 import React, {
     useState,
-    useEffect
 } from 'react';
+import { useSelector } from 'react-redux';
 import api from '../../Services/api';
 import { FaRegSave } from 'react-icons/fa';
 
@@ -15,27 +15,13 @@ import {
 } from '../../Style';
 
 const Perfil = () => {
-    const [email, setEmail] = useState('');
-    const [name, setName] = useState('');
+    const profile = useSelector(state => state.user.user);
+
+    const [email, setEmail] = useState(profile.email);
+    const [name, setName] = useState(profile.name);
     const [password, setPass] = useState('');
     const [oldPassword, setOldPass] = useState('');
     const [confirmPassword, setConfirmPass] = useState('');
-
-    useEffect(()=>{
-        async function loadUserInfo() {
-            try {
-                const user = await api.get('/users');
-                if (user) {
-                    setEmail(user.data.email);
-                    setName(user.data.name);
-                }
-            } catch (err) {
-                console.log(err);
-            }
-        }
-
-        loadUserInfo();
-    }, []);
 
     function handlerSave(e) {
         e.preventDefault();

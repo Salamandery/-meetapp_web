@@ -1,5 +1,6 @@
 import React from 'react';
 import history from '../../Services/history';
+import { useSelector } from 'react-redux';
 import {
     Container,
     User,
@@ -11,7 +12,8 @@ import {
 } from './style';
 
 const Header = () => {
-
+    const profile = useSelector(state => state.user.user);
+    
     function handlerPerfil(e) {
         e.preventDefault();
 
@@ -27,7 +29,7 @@ const Header = () => {
             <Logo onClick={handlerDashboard}>M</Logo>
             <User>
                 <UserInfo>
-                    <Username>Rodolfo M F Abreu</Username>
+                    <Username>{profile.name}</Username>
                     <ButtonPerfil onClick={handlerPerfil}>Meu Perfil</ButtonPerfil>
                 </UserInfo>
                 <Sair>Sair</Sair>

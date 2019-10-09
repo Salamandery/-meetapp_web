@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaRegCalendarAlt, FaMapMarkerAlt, FaTrashAlt, FaEdit } from 'react-icons/fa';
+import api from '../../Services/api';
 import history from '../../Services/history';
 import {
     Container,
@@ -27,6 +28,13 @@ const Details = () => {
 
         history.push('/Meetup', {meetup});
     }
+    function handlerCancel(e) {
+        e.preventDefault();
+
+        api.delete(`/events/${meetup.id}`);
+
+        history.push('/Dashboard');
+    }
 
     return (   
         <Container>
@@ -37,7 +45,7 @@ const Details = () => {
                         <FaEdit />
                         <span>Editar</span>
                     </EditMeet>
-                    <CanMeet>
+                    <CanMeet onClick={handlerCancel}>
                         <FaTrashAlt />
                         <span>Cancelar</span>
                     </CanMeet>

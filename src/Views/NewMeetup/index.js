@@ -24,7 +24,7 @@ const NewMeetup = () => {
     const [description, setDes] = useState('');
     const [location, setLocation] = useState('');
     const [preview, setPreview] = useState('');
-    const [file, setFile] = useState('');
+    const [file, setFile] = useState(0);
 
     useEffect(()=>{
         if (meetup) {
@@ -43,10 +43,10 @@ const NewMeetup = () => {
             const data = new FormData();
 
             data.append('file', e.target.files[0]);
-
             const res = await api.post('/files', data);
-
+            
             const { id, url } = res.data;
+            console.log(res);
             setFile(id);
             setPreview(url)
         } catch (err) {

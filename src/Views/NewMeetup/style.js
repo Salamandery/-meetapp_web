@@ -17,6 +17,15 @@ export const Container = styled.div`
             color: #666;
         }
     }
+
+    > label {
+        align-self: stretch;
+
+        
+        > input {
+            display: none;
+        }   
+    }
 `;
 export const Save = styled.button`
     display: flex;
@@ -41,8 +50,8 @@ export const Save = styled.button`
 `;
 export const Image = styled.div`
     color: #666;
-    background: ${props => props.src ? `url('${props.src}') 100% 100% no-repeat` : '#000'};
-    background-size: cover;
+    background: ${props => props.src ? `url('${props.src}') no-repeat` : '#000'};
+    background-size: 900px 300px;
     font-size: 64px;
     margin-bottom: 20px;
     align-self: stretch;

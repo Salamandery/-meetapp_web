@@ -1,10 +1,9 @@
 import React, {
     useState,
 } from 'react';
-import { useSelector } from 'react-redux';
-import api from '../../Services/api';
+import { useSelector, useDispatch } from 'react-redux';
 import { FaRegSave } from 'react-icons/fa';
-
+import { updateProfileRequest } from '../../Services/store/user/action';
 import {
     Container,
     Save,
@@ -15,6 +14,7 @@ import {
 } from '../../Style';
 
 const Perfil = () => {
+    const dispatch = useDispatch();
     const profile = useSelector(state => state.user.user);
 
     const [email, setEmail] = useState(profile.email);
@@ -26,17 +26,13 @@ const Perfil = () => {
     function handlerSave(e) {
         e.preventDefault();
         
-        try {
-            api.put('/users', {
-                email,
+        dispatch(updateProfileRequest({
                 name,
-                oldPassword,
+                email,
                 password,
-                confirmPassword
-            });
-        } catch (err) {
-            console.tron.log(err);
-        }
+                oldPassword,
+                confirmPassword,
+        }));
     }
 
     return (   

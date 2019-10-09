@@ -27,7 +27,7 @@ export const Container = styled.div`
         }
     }
 `;
-export const Login = styled.button`
+export const Signing = styled.button`
     background: #99003d;
     border-radius: 5px;
     border: 0px;

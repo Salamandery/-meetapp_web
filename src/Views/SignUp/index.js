@@ -1,33 +1,26 @@
 import React, {
     useState
 } from 'react';
-import api from '../../Services/api';
+import { useDispatch } from 'react-redux';
+import { signUpRequest } from '../../Services/store/auth/action';
 import {
     Container,
-    Login
+    Signing
 } from './style';
 import {
     Input
 } from '../../Style';
 
-const SignUp = ({history}) => {
+const SignUp = () => {
+    const dispatch = useDispatch();
     const [name, setName] = useState('');
     const [email, setEmail] = useState(''); 
     const [password, setPass] = useState(''); 
 
-    async function handlerSignIn() {
-        try {
-            const res = await api.post('/sessions', {
-                email,
-                password
-            });
-            if (res.status === 200) {
-                history.push('/SignIn');
-            }
-        } catch (err) {
-            console.log(err)
-        }
+    async function handlerSignIn(e) {
+        e.preventDefault();
 
+        dispatch(signUpRequest(name, email, password));
     }
 
     return (
@@ -44,7 +37,7 @@ const SignUp = ({history}) => {
             <Input value={password} 
                    onChange={e=>setPass(e.target.value)}
                    placeholder="Sua senha secreta" />
-            <Login onClick={handlerSignIn}>Entrar</Login>
+            <Signing onClick={handlerSignIn}>Entrar</Signing>
             <a href="/">Já tenho uma conta.</a>
         </Container>
     );

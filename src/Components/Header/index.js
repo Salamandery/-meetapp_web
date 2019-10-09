@@ -1,6 +1,7 @@
 import React from 'react';
 import history from '../../Services/history';
-import { useSelector } from 'react-redux';
+import { signOutRequest } from '../../Services/store/auth/action'
+import { useSelector, useDispatch } from 'react-redux';
 import {
     Container,
     User,
@@ -12,6 +13,7 @@ import {
 } from './style';
 
 const Header = () => {
+    const dispatch = useDispatch();
     const profile = useSelector(state => state.user.user);
     
     function handlerPerfil(e) {
@@ -24,6 +26,11 @@ const Header = () => {
 
         history.push('/Dashboard');
     }
+    function handlerLogout(e) {
+        e.preventDefault();
+
+        dispatch(signOutRequest());
+    }
     return (
         <Container>
             <Logo onClick={handlerDashboard}>M</Logo>
@@ -32,7 +39,7 @@ const Header = () => {
                     <Username>{profile.name}</Username>
                     <ButtonPerfil onClick={handlerPerfil}>Meu Perfil</ButtonPerfil>
                 </UserInfo>
-                <Sair>Sair</Sair>
+                <Sair onClick={handlerLogout}>Sair</Sair>
             </User>
         </Container>
     );

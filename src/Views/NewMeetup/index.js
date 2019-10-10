@@ -69,6 +69,7 @@ const NewMeetup = () => {
                     banner_id: file,
                 });
                 toast.success("Cadastro atualizado com sucesso.");
+                history.push('/Dashboard');
             } catch (err) {
                 toast.error('Não foi possivel atualizar o meetup, verifique os dados informados')
             }
@@ -84,6 +85,7 @@ const NewMeetup = () => {
                     banner_id: file,
                 });
                 toast.success('Cadastro realizado com sucesso');
+                history.push('/Dashboard');
             } catch (err) {
                 toast.error('Não foi possivel cadastrar o meetup, verifique os dados informados')
             }

@@ -15,6 +15,7 @@ import {
     Image,
     LabelInfo
 } from './style';
+import { toast } from 'react-toastify';
 
 const Details = () => {
     const meetup = history.location.state.item;
@@ -32,6 +33,8 @@ const Details = () => {
         e.preventDefault();
 
         api.delete(`/events/${meetup.id}`);
+
+        toast.success("Evento deletado com sucesso");
 
         history.push('/Dashboard');
     }

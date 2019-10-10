@@ -59,7 +59,7 @@ const Dashboard = () => {
                         <Title>{meet.name}</Title>
 
                         <DataLabel>    
-                            <span>{meet.date}</span>
+                            <span>{meet.formattedDate}</span>
                             <FaAngleRight />
                         </DataLabel>
                     </Meetup>))

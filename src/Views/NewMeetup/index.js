@@ -36,7 +36,7 @@ const NewMeetup = () => {
             setPreview(meetup.banner.url);
             setFile(meetup.banner.id);
         }
-    }, [meetup]);
+    }, []);
 
     async function handleAvatar(e) {
         try {
@@ -54,13 +54,13 @@ const NewMeetup = () => {
         }
     }
 
-    function handlerSave(e) {
+    async function handlerSave(e) {
         e.preventDefault();
 
         if (id) {
             // Editando
             try {
-                api.put('/events', {
+                const res = await api.put('/events', {
                     id,
                     name,
                     date,
@@ -69,14 +69,16 @@ const NewMeetup = () => {
                     banner_id: file,
                 });
                 toast.success("Cadastro atualizado com sucesso.");
-                history.push('/Dashboard');
+                setTimeout(()=>{
+                    history.push('/Dashboard');
+                }, 1000);
             } catch (err) {
                 toast.error('Não foi possivel atualizar o meetup, verifique os dados informados')
             }
         } else {
             // Inserindo
             try {
-                api.post('/events', {
+                const res = await api.post('/events', {
                     id,
                     name,
                     date,
@@ -84,8 +86,12 @@ const NewMeetup = () => {
                     location,
                     banner_id: file,
                 });
+
                 toast.success('Cadastro realizado com sucesso');
-                history.push('/Dashboard');
+
+                setTimeout(()=>{
+                    history.push('/Dashboard');
+                }, 1000);
             } catch (err) {
                 toast.error('Não foi possivel cadastrar o meetup, verifique os dados informados')
             }
@@ -119,6 +125,7 @@ const NewMeetup = () => {
             />
             <Input placeholder="Data do Meetup" 
                    value={date}
+                   type="datetime-local"
                    onChange={e=>setDate(e.target.value)}
             />
             <Input placeholder="Localização" 

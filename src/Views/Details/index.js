@@ -29,14 +29,16 @@ const Details = () => {
 
         history.push('/Meetup', {meetup});
     }
-    function handlerCancel(e) {
+    async function handlerCancel(e) {
         e.preventDefault();
 
-        api.delete(`/events/${meetup.id}`);
+        await api.delete(`/events/${meetup.id}`);
 
         toast.success("Evento deletado com sucesso");
 
-        history.push('/Dashboard');
+        setTimeout(()=>{
+            history.push('/Dashboard');
+        }, 1000);
     }
 
     return (   
@@ -62,7 +64,7 @@ const Details = () => {
                         <LabelInfo>
                             <Labels>    
                                 <FaRegCalendarAlt />
-                                <span>{meetup.date}</span>
+                                <span>{meetup.formattedDate}</span>
                             </Labels>
                             <Labels>    
                                 <FaMapMarkerAlt />

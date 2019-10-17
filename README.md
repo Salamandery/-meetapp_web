@@ -23,4 +23,6 @@
 - Perfil
 ![WebView](assets/Perfil.PNG)
 
+#### Não esquecer de configurar o IP do servidor no Axios (./src/Services/api.js)
+
 Rodolfo M. F. Abreu

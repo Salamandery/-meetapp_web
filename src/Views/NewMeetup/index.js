@@ -2,6 +2,7 @@ import React, {
     useState,
     useEffect
 } from 'react';
+import { format, parseISO } from 'date-fns';
 import { FaRegSave, FaCameraRetro } from 'react-icons/fa';
 import history from '../../Services//history';
 import api from '../../Services/api';
@@ -16,7 +17,7 @@ import {
 } from '../../Style';
 import { toast } from 'react-toastify';
 
-const NewMeetup = () => {
+function NewMeetup() {
     const { meetup } = history.location.state || {};
     const [id, setId] = useState('');
     const [name, setName] = useState('');
@@ -28,15 +29,17 @@ const NewMeetup = () => {
 
     useEffect(()=>{
         if (meetup) {
+            const dt = format(parseISO(meetup.date), `yyyy-MM-dd'T'HH:mm`);
+            
             setId(meetup.id);
             setName(meetup.name);
-            setDate(meetup.date);
+            setDate(dt);
             setDes(meetup.description);
             setLocation(meetup.location);
             setPreview(meetup.banner.url);
             setFile(meetup.banner.id);
         }
-    }, []);
+    }, [meetup]);
 
     async function handleAvatar(e) {
         try {
@@ -46,7 +49,6 @@ const NewMeetup = () => {
             const res = await api.post('/files', data);
             
             const { id, url } = res.data;
-            console.log(res);
             setFile(id);
             setPreview(url)
         } catch (err) {
@@ -60,7 +62,7 @@ const NewMeetup = () => {
         if (id) {
             // Editando
             try {
-                const res = await api.put('/events', {
+                await api.put('/events', {
                     id,
                     name,
                     date,
@@ -78,7 +80,7 @@ const NewMeetup = () => {
         } else {
             // Inserindo
             try {
-                const res = await api.post('/events', {
+                await api.post('/events', {
                     id,
                     name,
                     date,

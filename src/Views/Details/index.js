@@ -17,7 +17,7 @@ import {
 } from './style';
 import { toast } from 'react-toastify';
 
-const Details = () => {
+function Details() {
     const meetup = history.location.state.item;
 
     if (!meetup) {

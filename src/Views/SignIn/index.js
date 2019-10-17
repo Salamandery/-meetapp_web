@@ -33,6 +33,7 @@ const SignIn = () => {
                    onChange={e=>setEmail(e.target.value)}
             />
             <Input placeholder="Senha"
+                   type="password"
                    value={password} 
                    onChange={e=>setPass(e.target.value)}
              />

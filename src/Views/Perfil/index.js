@@ -13,7 +13,7 @@ import {
     Input
 } from '../../Style';
 
-const Perfil = () => {
+function Perfil() {
     const dispatch = useDispatch();
     const profile = useSelector(state => state.user.user);
 
@@ -47,14 +47,17 @@ const Perfil = () => {
             />
             <ChangePassword>
                 <Input placeholder="Senha atual" 
+                        type="password"
                         value={oldPassword}
                         onChange={e=>setOldPass(e.target.value)}
                 />
                 <Input placeholder="Nova senha" 
+                        type="password"
                         value={password}
                         onChange={e=>setPass(e.target.value)}
                 />
-                <Input placeholder="Confirmação de senha" 
+                <Input placeholder="Confirmação de senha"
+                        type="password" 
                         value={confirmPassword}
                         onChange={e=>setConfirmPass(e.target.value)}
                 />

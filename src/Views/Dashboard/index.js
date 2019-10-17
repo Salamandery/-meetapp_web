@@ -15,7 +15,7 @@ import {
     DataLabel
 } from './style';
 
-const Dashboard = () => {
+function Dashboard() {
     const [meetup, setMeetup] = useState('');
 
     useEffect(()=>{

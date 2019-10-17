@@ -34,7 +34,8 @@ const SignUp = () => {
                    onChange={e=>setEmail(e.target.value)}
                    placeholder="Digite seu e-mail" 
             />
-            <Input value={password} 
+            <Input value={password}
+                   type="password" 
                    onChange={e=>setPass(e.target.value)}
                    placeholder="Sua senha secreta" />
             <Signing onClick={handlerSignIn}>Entrar</Signing>

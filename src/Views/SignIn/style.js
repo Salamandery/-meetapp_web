@@ -15,6 +15,7 @@ export const Container = styled.div`
         color: #99003d;
         font-size: 68px;
         font-family: sans-serif;
+        font-weight: bold;
     }
 
     a {

@@ -44,6 +44,7 @@ export const Logo = styled.button`
     align-self: center;
     color: #99003d;
     font-size: 42px;
+    font-weight: bold;
     font-family: sans-serif;
 `;
 export const Sair = styled.button`

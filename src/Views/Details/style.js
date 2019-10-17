@@ -87,7 +87,7 @@ export const CanMeet = styled.button`
     }
 `;
 export const Image = styled.img`
-    height: 300px;
+    height: 450px;
     align-self: stretch;
 `;
 export const Description = styled.span`

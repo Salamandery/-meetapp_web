@@ -51,11 +51,11 @@ export const Save = styled.button`
 export const Image = styled.div`
     color: #666;
     background: ${props => props.src ? `url('${props.src}') no-repeat` : '#000'};
-    background-size: 900px 300px;
+    background-size: 900px 400px;
     font-size: 64px;
     margin-bottom: 20px;
     align-self: stretch;
-    height: 300px;
+    height: 400px;
     display: flex;
     padding-top: 10px;
     align-items: center;

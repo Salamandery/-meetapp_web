@@ -188,7 +188,11 @@ meetapp_web/
 
 ## 👨‍💻 Autor | Author
 
-**Rodolfo M. F. Abreu**
+**PT-BR:**
+
+<div align="center">
+
+**Rodolfo M. F. Abreu**  
 Desenvolvedor de software apaixonado por tecnologia, aprendizado contínuo e boas práticas de programação. Sempre em busca de novos desafios e oportunidades para colaborar em projetos inovadores.
 
 [![GitHub](https://img.shields.io/badge/GitHub-rodolfomfabreu-black?style=for-the-badge&logo=github)](https://github.com/salamandery)
@@ -196,15 +200,21 @@ Desenvolvedor de software apaixonado por tecnologia, aprendizado contínuo e boa
 
 Sinta-se à vontade para entrar em contato para dúvidas, sugestões ou colaborações!
 
+</div>
+
 **EN:**
 
-**Rodolfo M. F. Abreu**
+<div align="center">
+
+**Rodolfo M. F. Abreu**  
 Software developer passionate about technology, continuous learning, and best programming practices. Always looking for new challenges and opportunities to collaborate on innovative projects.
 
 [![GitHub](https://img.shields.io/badge/GitHub-rodolfomfabreu-black?style=for-the-badge&logo=github)](https://github.com/salamandery)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Rodolfo%20Abreu-blue?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/rodolfo-marques-ferreira-de-abreu/)
 
 Feel free to get in touch for questions, suggestions, or collaborations!
+
+</div>
 
 ---
 
